@@ -1,0 +1,35 @@
+@using BIS.ViewModels.VM
+@model AttachDetachDonorBloodVm
+@{
+    ViewData["Title"] = $"{ViewBag.ActionType} Blood Group";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="@ViewBag.PostAction">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Donor</label>
+                <select asp-for="DonorId" class="form-control" asp-items="@ViewBag.DonorList"></select>
+                <span asp-validation-for="DonorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label"> BloodGroup</label>
+                <select asp-for="BloodGroupId" class="form-control" asp-items="@ViewBag.BloodGroupList"></select>
+                <span asp-validation-for="BloodGroupId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@ViewBag.ActionType" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <button type="submit" class="btn btn-primary"><a class="text-dark" asp-action="Index" asp-controller="Donor">Back to List</a></button>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

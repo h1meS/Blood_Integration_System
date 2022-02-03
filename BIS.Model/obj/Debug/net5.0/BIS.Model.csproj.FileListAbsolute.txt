@@ -1,0 +1,12 @@
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\bin\Debug\net5.0\BIS.Model.deps.json
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\bin\Debug\net5.0\BIS.Model.dll
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\bin\Debug\net5.0\ref\BIS.Model.dll
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\bin\Debug\net5.0\BIS.Model.pdb
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\obj\Debug\net5.0\BIS.Model.csproj.AssemblyReference.cache
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\obj\Debug\net5.0\BIS.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\obj\Debug\net5.0\BIS.Model.AssemblyInfoInputs.cache
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\obj\Debug\net5.0\BIS.Model.AssemblyInfo.cs
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\obj\Debug\net5.0\BIS.Model.csproj.CoreCompileInputs.cache
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\obj\Debug\net5.0\BIS.Model.dll
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\obj\Debug\net5.0\ref\BIS.Model.dll
+C:\Users\semih\Documents\Blood_Integration_System\BIS.Model\obj\Debug\net5.0\BIS.Model.pdb

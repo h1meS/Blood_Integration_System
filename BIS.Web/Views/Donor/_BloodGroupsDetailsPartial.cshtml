@@ -1,0 +1,22 @@
+@using BIS.ViewModels.VM
+@model IEnumerable<BloodGroupVm>
+<hr/>
+<label>Blood Group:</label>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

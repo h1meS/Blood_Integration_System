@@ -1,0 +1,58 @@
+@using BIS.ViewModels.VM
+@model IEnumerable<DonorVm>
+@{
+    ViewData["Title"] = "Donors";
+}
+<h2>Donors</h2>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <button type="submit" class="btn btn-primary"><a class="text-dark" asp-action="AddOrEditDonor">Create New</a></button>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diseases)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diseases)
+            </td>
+            <td>
+                @if (User.IsInRole("Admin"))
+                    {
+                        <button type="submit" class="btn btn-primary"><a class="text-dark" asp-action="AddOrEditDonor" asp-route-id="@item.Id">Edit</a> </button>@:|
+                        <button type="submit" class="btn btn-primary"><a class="text-dark" asp-controller="BloodGroup" asp-action="AttachDonorToBloodGroup" asp-route-donorId="@item.Id">Attach Blood to Donor</a></button> @:|
+                        <button type="submit" class="btn btn-primary"><a class="text-dark" asp-controller="BloodGroup" asp-action="DetachDonorToBloodGroup" asp-route-donorId="@item.Id">Detach Blood from Donor</a> </button>@:|
+                    } 
+                    <button type="submit" class="btn btn-primary"><a class="text-dark" asp-action="Details" asp-route-id="@item.Id">Details</a></button> |
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

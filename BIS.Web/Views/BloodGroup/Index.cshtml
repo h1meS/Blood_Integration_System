@@ -1,0 +1,50 @@
+@using BIS.ViewModels.VM
+@model IEnumerable<BloodGroupVm>
+@{
+    ViewData["Title"] = "BloodGroups";
+}
+<h2>Blood Groups</h2>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <button type="submit" class="btn btn-primary"><a class="text-dark" asp-action="AddOrEditBloodGroup">Create New</a></button>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                <label>Donors Count</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Donors.Count)
+                </td>
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <button type="submit" class="btn btn-primary"><a class="text-dark" asp-action="AddOrEditBloodGroup" asp-route-id="@item.Id">Edit</a></button>
+                    } |
+                    <button type="submit" class="btn btn-primary"><a class="text-dark" asp-action="Details" asp-route-id="@item.Id">Details</a> </button>|
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
